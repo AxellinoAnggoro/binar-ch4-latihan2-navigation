@@ -25,7 +25,10 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.loginBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            val username = binding.loginUsername.text.toString()
+            val bundle = Bundle()
+            bundle.putString("USERNAME", username)
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment, bundle)
         }
 
         binding.loginTv.setOnClickListener {

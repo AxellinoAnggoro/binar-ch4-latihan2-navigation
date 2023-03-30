@@ -23,6 +23,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val getUsername = arguments?.getString("USERNAME")
+        binding.homeTv.text = getUsername
+
         binding.homeIcon.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment2)
         }
